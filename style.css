@@ -1,0 +1,442 @@
+
+/* Define fonts */
+@font-face {
+    font-family: font1;
+    /*this is for paragraphs bold property needed */
+    src: url(fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    /*this is for paragraphs */
+    src: url(fonts/Poppins-Regular.ttf);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+    --pcolor: #f1db25;
+    --scolor: #fad932;
+    --lightcolor: white;
+    --Darkcolor: #252525;
+    --blackcolor: #080808;
+}
+.pcolor { color: #f1db25; }
+.scolor { color: #fad932; }
+
+body {
+    background-color: var(--lightcolor);
+    position: relative;
+    top: -24px;
+}
+a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+ul {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {font-family: font1; font-weight: 700; color: var(--Light-txt); text-transform: uppercase;}
+p {font-family: font2;}
+h1 {font-size: clamp(2.5rem, 4vw + 1rem, 3.125rem);}
+h2 {font-size: clamp(2.0625rem, 2.5vw + 1rem, 2.5rem);}
+h3 {font-size: 30px; }
+h4 {font-size: 25px; }
+h5 {font-size: 20px; }
+h6 {font-size: 17px; }
+p {font-size: 17px; font-weight: 500; }
+
+/* h2 k neechy line lgani hai 1 hee bar */
+h2 {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 5px;
+    background-color: var(--scolor);
+    border-radius: 2px; /* Thora sa smooth look dene k liye */
+}
+
+.about-sec h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 50px;
+    height: 5px;
+    background-color: var(--scolor);
+    border-radius: 2px; /* Thora sa smooth look dene k liye */
+}
+
+
+/* Buttons style here  */
+.btn1,
+.btn2 {
+    color: var(--lightcolor);
+    font-size: 17px;
+    font-family: font2;
+    border-radius: 0;
+    width: 180px;
+    height: 45px;
+    transition: all 0.3s ease-in-out;
+}
+.btn1 {
+    color: var(--Darkcolor);
+    background-color: var(--lightcolor);
+}
+.btn1:hover {
+    border: 1px solid var(--lightcolor);
+    color: var(--lightcolor);
+    background: none;
+}
+
+
+.btn2 {
+    color: var(--Darkcolor);
+    background-color: var(--pcolor);
+}
+.btn2:hover {
+    border: 1px solid var(--pcolor);
+    color: var(--pcolor);
+    background: none;
+}
+
+
+
+/* Navbar starts here  */
+
+.header-contact {
+    background-color: var(--Darkcolor);
+    height: 50px;
+    color: var(--lightcolor);
+    position: relative;
+    z-index: 999;
+}
+.header-contact span {
+    color: var(--Light-txt);
+}
+.header-contact i {
+    color: var(--scolor);
+}
+
+
+
+/* Hero section starts here  */
+.hero-sec {
+    position: relative;
+    top: -15px;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/hero-bg.jpg);
+    /* background-image: url(images/hero-bg.jpg); */
+    background-position: center -5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+}
+/* logo k lye setting  */
+.navbar-brand,
+.navbar-brand:hover {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--lightcolor);
+}
+
+.nav-link {
+        color: var(--lightcolor);
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        font-weight: 400;
+        width: 100px;
+        padding-top: 40px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    .nav-link:hover {
+        color: var(--lightcolor);
+        background-color: var(--Darkcolor);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--lightcolor);
+        background-color: var(--Darkcolor);
+    }
+
+    .nav-link.active,
+    .nav-link:hover.active {
+        color: var(--lightcolor) !important;
+        /* your desired text color */
+        background-color: var(--Darkcolor);
+        /* optional */
+        font-weight: 400;
+        padding-top: 40px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+    }
+
+/* Responsive for Small screens */
+@media (max-width: 576px) {
+    .hero-sec {
+    position: relative;
+    top: 0px;
+}
+
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-link,
+    .nav-link.active {
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        width: 150px;
+    }
+
+}
+
+
+/* Carousel Starts here  */
+#guarder-carousel {
+    
+}
+#guarder-carousel .carousel-item h1 {
+    color: var(--Light-txt) !important;
+}
+
+/* controll and indicators  */
+
+.carousel-indicators [data-bs-target] {
+    position: relative;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--lightcolor);
+    opacity: 1;
+    margin: 5px;
+    border: none;
+}
+
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--pcolor);
+}
+
+
+.btn-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn1,
+.btn2 {
+    color: var(--lightcolor);
+    font-size: 17px;
+    font-family: font2;
+    border-radius: 0;
+    width: 180px;
+    height: 45px;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-item .btn1 {
+    color: var(--Darkcolor);
+    background-color: var(--lightcolor);
+}
+.carousel-item .btn1:hover {
+    border: 1px solid var(--lightcolor);
+    color: var(--lightcolor);
+    background: none;
+}
+
+
+.carousel-item .btn2 {
+    color: var(--Darkcolor);
+    background-color: var(--pcolor);
+}
+.carousel-item .btn2:hover {
+    border: 1px solid var(--pcolor);
+    color: var(--pcolor);
+    background: none;
+}
+
+/* Responsive for Small screens */
+@media (max-width: 576px) {
+    .hero-sec {
+        height: 95vh;
+    }
+    .carousel {
+        width: 100%;
+    }
+
+    .detail-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detail-box h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .carousel-indicators [data-bs-target] {
+    position: relative;
+    bottom: 0px;
+    
+}
+}
+
+/* about sec starte here  */
+.about-sec .detail-box {
+  background-color: #ffffff;
+  padding: 45px 25px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin-left: -45px;
+}
+
+/* Our services starte here */
+.Our-services {
+    background-color: var(--Darkcolor);
+}
+
+.Our-services img {
+    width: 80px;
+}
+.card {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* Testimonial Starts here */
+
+.Testimonial img {
+    width: 100px;
+}
+
+/* بٹن کی اوپیسٹی پہلے 1 کریں تاکہ رنگ صاف نظر آئے */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1 !important;
+}
+
+/* جب بٹن پر ہوور ہو، تو اندر موجود آئیکن کا رنگ بدلے */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--pcolor) !important;
+}
+
+/* آپ کا باقی ڈیزائن */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--blackcolor) !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    background-size: 15px 15px !important;
+    transition: background-color 0.3s ease;
+}
+
+.Get-In-touch {
+    position: relative;
+    top: -15px;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/contact-bg.jpg);
+    /* background-image: url(images/hero-bg.jpg); */
+    background-position: center -5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+
+}
+
+.Get-In-touch input {
+     width: 70%;
+     height: 40px;
+     border: none;
+     padding: 0 30px;
+}
+.Get-In-touch textarea {
+     width: 70%;
+     height: 120px;
+     border: none;
+     padding: 30px 30px;
+}
+
+.Get-In-touch input:focus,
+.Get-In-touch textarea:focus
+{
+    box-shadow: none;      
+    outline: 0 none;
+}
+
+
+
+
+/* our gaurds team starte here */
+
+.team_section .box {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team_section .box .img-box img {
+  width: 100%;
+  display: block;
+}
+
+/* Text Overlay (Bottom) */
+.team_section .box .detail-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  color: var(--lightcolor);
+  padding: 20px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.team_section .box .detail-box h5 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.team_section .box .detail-box h6 {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  color: var(--scolor); /* Yellow text for supervisor */
+}
